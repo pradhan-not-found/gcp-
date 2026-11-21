@@ -1,0 +1,33 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: run-pipeline
+description: "Cloud Run Delivery Pipeline"
+serialPipeline:
+  stages:
+  - targetId: run-target
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: gke-pipeline
+description: "GKE Delivery Pipeline"
+serialPipeline:
+  stages:
+  - targetId: gke-target
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: run-target
+description: "Cloud Run Target"
+run:
+  location: projects/PROJECT_ID/locations/us-central1
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: gke-target
+description: "GKE Target"
+gke:
+  cluster: projects/PROJECT_ID/locations/us-central1/clusters/workshop-cluster
