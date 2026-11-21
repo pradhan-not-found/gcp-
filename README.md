@@ -82,7 +82,3 @@ Delete the GKE cluster, Cloud Run service, Artifact Registry repository, and Clo
 ```bash
 bash cleanup.sh
 ```
-
-If you liked the workshop then star the repo and follow me on [Linkedin](https://www.linkedin.com/in/neelcshah/) :)
-
-
